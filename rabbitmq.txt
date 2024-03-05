@@ -1,0 +1,16 @@
+docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672  --hostname myRabbit -e RABBITMQ_DEFAULT_VHOST=my_vhost  -e RABBITMQ_DEFAULT_USER=1776616165 -e RABBITMQ_DEFAULT_PASS=gaozijian1314
+————————————————
+
+                            版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
+                        
+原文链接：https://blog.csdn.net/qq_21077715/article/details/103386522
+
+
+docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 --hostname myRabbit -e RABBITMQ_DEFAULT_VHOST=my_vhost -e RABBITMQ_DEFAULT_USER=1776616165 -e RABBITMQ_DEFAULT_PASS=gaozijian1314 rabbitmq:latest
+
+firewall-cmd --zone=public --add-port=5672/tcp --permanent
+
+docker exec -it 57405754bcfa /bin/bash
+
+rabbitmqctl add_user gzj 1314
+rabbitmqctl  set_user_tags gzj administrator
